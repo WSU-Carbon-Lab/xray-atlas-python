@@ -1,15 +1,24 @@
 [build-system]
-requires = ["maturin>=1.7,<2.0"]
 build-backend = "maturin"
+requires = ["maturin>=1.7,<2.0"]
 
 [project]
-name = "xray-atlas-python"
-requires-python = ">=3.8"
 classifiers = [
-    "Programming Language :: Rust",
-    "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python :: Implementation :: PyPy",
+  "Programming Language :: Rust",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "matplotlib>=3.9.4",
+  "numpy>=2.2.0",
+  "pandas>=2.2.3",
+  "polars>=1.17.1",
+  "requests>=2.32.3",
+  "ruff>=0.8.3",
+  "scipy>=1.14.1",
 ]
 dynamic = ["version"]
+name = "xray_atlas"
+requires-python = ">=3.12"
 [tool.maturin]
 features = ["pyo3/extension-module"]
